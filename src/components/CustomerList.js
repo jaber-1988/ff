@@ -39,4 +39,5 @@ export const CustomerList = ({ customers }) => {
       </tbody>
     </table>
   );
+  
 };
