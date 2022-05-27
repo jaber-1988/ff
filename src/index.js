@@ -22,12 +22,7 @@ ReactDOM.render(
           <Route path="customers/new" element={<NewCustomer />} />
           <Route path="imprint" element={<Imprint />} />
           <Route path="search" element={<Search />} />
-          {/* Variante 1: PageNotFoundAlternative verwendet useLocation */}
           <Route path="*" element={<PageNotFoundAlternative />} />
-          {/* Variante 2: Nested Routes, innere Route verwendet useParams */}
-          {/* <Route path="*" element={<PageNotFound />}>
-            <Route path=":pathNotFound" element={<PageNotFoundContent />} />
-          </Route> */}
         </Route>
       </Routes>
     </BrowserRouter>
