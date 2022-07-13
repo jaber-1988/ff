@@ -1,9 +1,9 @@
 ### NorthWind 
 
 -Creat New user
-- Update User
+-Update User
 -Delete User
-- Search for CityName
+-Search for CityName
 
 
 
