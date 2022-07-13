@@ -1,0 +1,147 @@
+:root {
+  --color-primary: #577590;
+  --color-primary-light: #b5c5d2;
+  --color-highlight: #f3722c;
+  --color-highlight-active: #d7530c;
+  --border-radius: 8px;
+  font-size: 62.5%;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  ul {
+    list-style: none;
+  }
+}
+.customerGrid {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "label1 userinfo1 todos"
+    "label2 userinfo2 todos"
+    "label3 userinfo3 todos";
+  gap: 10px;
+
+  padding: 1.5em;
+  border-radius: 8px;
+  border: 1px solid #b4b4b4;
+  margin-top: 1em;
+}
+
+.search-bar {
+  display: flex;
+  flex-grow: 1;
+  input {
+    height: 30px;
+    width: 50%;
+    min-width: 200px;
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+    padding: 2px 10px;
+    border: 1px solid black;
+    &:focus {
+      // border: none;
+      outline: none;
+    }
+  }
+  button {
+    padding: 0 8px;
+    border: none;
+    color: white;
+    background-color: var(--color-highlight);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      background-color: var(--color-highlight-active);
+    }
+    div {
+      display: flex;
+    }
+    .icon {
+      font-size: 1.8rem;
+      vertical-align: center;
+    }
+  }
+}
+
+.App {
+  font-size: 1.6rem;
+  margin: 0;
+  margin-top: 60px;
+  padding: 20px;
+  dialog {
+    margin: auto;
+    position: absolute;
+    top: 14vh;
+    width: 300px;
+    height: 100px;
+    border-radius: 8px;
+    border: 1px solid #b5c5d2;
+    padding: 1em;
+    box-shadow: 5px 10px 8px #888888;
+  }
+  table {
+    border-collapse: collapse;
+    tr {
+      border-bottom: 1px solid var(--color-primary-light);
+      &:not(.headline) {
+        &:hover {
+          background-color: var(--color-primary);
+          color: white;
+        }
+        th,
+        td {
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      th,
+      td {
+        text-align: start;
+        padding: 6px 16px;
+        white-space: nowrap;
+        &.numeric {
+          text-align: end;
+        }
+      }
+    }
+  }
+  .text-highlight {
+    color: var(--color-highlight);
+  }
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 60px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    background-color: var(--color-primary);
+    .title {
+      white-space: nowrap;
+      color: white;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+    ul {
+      display: flex;
+      margin-left: 20px;
+      li {
+        list-style: none;
+        margin: 0 10px 0 0;
+        a {
+          color: #ccc;
+          text-decoration: none;
+        }
+        .active {
+          color: rgb(255, 255, 161);
+        }
+      }
+    }
+  }
+}
